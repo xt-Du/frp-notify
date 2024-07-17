@@ -22,7 +22,7 @@ fi
 make build-all VERSION=${version}
 
 rm -rf ./release
-mkdir ./release
+mkdir -p ./release
 
 os_all='linux windows darwin'
 arch_all='amd64'
@@ -37,13 +37,13 @@ for os in $os_all; do
                 continue
             fi
 
-            mkdir ${frp_notify_path}
+            mkdir -p ${frp_notify_path}
             mv ./bin/frp-notify-${os}-${arch} ${frp_notify_path}/frp-notify.exe
         else
             if [ ! -f "./bin/frp-notify-${os}-${arch}" ]; then
                 continue
             fi
-            mkdir ${frp_notify_path}
+            mkdir -p ${frp_notify_path}
             mv ./bin/frp-notify-${os}-${arch} ${frp_notify_path}/frp-notify
         fi
         cp ./LICENSE ${frp_notify_path}
