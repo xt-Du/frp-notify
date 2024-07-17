@@ -55,7 +55,11 @@ for os in $os_all; do
         else
             tar -zcf${os}.tar.gz ./release/${os}
         fi
+        pwd
+        ls
         cd ..
         rm -rf ./release/${os}/
+        pwd
+        ls
     done
 done
