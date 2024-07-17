@@ -52,11 +52,13 @@ for os in $os_all; do
         # packages
         cd ./release
         if [ "x${os}" = x"windows" ]; then
-            zip -rq 123.zip ${frp_notify_path}
+            zip -rq ${frp_notify_dir_name}.zip ${frp_notify_dir_name}
         else
-            tar -zcf 123.tar.gz ${frp_notify_path}
+            tar -zcf ${frp_notify_dir_name}.tar.gz ${frp_notify_dir_name}
         fi
+        ls
         cd ..
         rm -rf ${frp_notify_path}
+        ls
     done
 done
