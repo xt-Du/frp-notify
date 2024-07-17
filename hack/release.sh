@@ -37,28 +37,23 @@ for os in $os_all; do
                 continue
             fi
 
-            mkdir -p ${frp_notify_path}
-            mv ./bin/frp-notify-${os}-${arch} ${frp_notify_path}/frp-notify.exe
+            mkdir -p ./release/${os}
+            mv ./bin/frp-notify-${os}-${arch} ./release/${os}/frp-notify.exe
         else
             if [ ! -f "./bin/frp-notify-${os}-${arch}" ]; then
                 continue
             fi
-            mkdir -p ${frp_notify_path}
-            mv ./bin/frp-notify-${os}-${arch} ${frp_notify_path}/frp-notify
+            mkdir -p ./release/${os}
+            mv ./bin/frp-notify-${os}-${arch} ./release/${os}/frp-notify
         fi
-        cp ./LICENSE ${frp_notify_path}
-        cp -rf ./conf/* ${frp_notify_path}
 
         # packages
         cd ./release
         if [ "x${os}" = x"windows" ]; then
-            zip -rq ${frp_notify_dir_name}.zip ${frp_notify_dir_name}
+            zip -rq ${os}.zip ./release/${os}
         else
-            tar -zcf ${frp_notify_dir_name}.tar.gz ${frp_notify_dir_name}
+            tar -zcf${os}.tar.gz ./release/${os}
         fi
-        ls
-        cd ..
-        rm -rf ${frp_notify_path}
-        ls
+
     done
 done
