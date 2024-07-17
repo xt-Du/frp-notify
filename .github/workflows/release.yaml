@@ -54,8 +54,8 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./release/frp-notify-${{ steps.get_version.outputs.VERSION }}-linux-amd64.tar.gz
-          asset_name: frp-notify-${{ steps.get_version.outputs.VERSION }}-linux-amd64.tar.gz
+          asset_path: ./release/123.tar.gz
+          asset_name: 123.tar.gz
           asset_content_type: application/gzip
       - name: Upload Windows Artifact
         uses: actions/upload-release-asset@v1
@@ -63,8 +63,8 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./release/frp-notify-${{ steps.get_version.outputs.VERSION }}-windows-amd64.zip
-          asset_name: frp-notify-${{ steps.get_version.outputs.VERSION }}-windows-amd64.zip
+          asset_path: ./release/123.zip
+          asset_name: 123.zip
           asset_content_type: application/gzip
       - name: Upload Darwin Artifact
         uses: actions/upload-release-asset@v1
@@ -72,6 +72,6 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./release/frp-notify-${{ steps.get_version.outputs.VERSION }}-darwin-amd64.tar.gz
-          asset_name: frp-notify-${{ steps.get_version.outputs.VERSION }}-darwin-amd64.tar.gz
+          asset_path: ./release/123.tar.gz
+          asset_name: 123.tar.gz
           asset_content_type: application/gzip
