@@ -29,8 +29,8 @@ arch_all='amd64'
 
 for os in $os_all; do
     for arch in $arch_all; do
-        frp_notify_dir_name="frp-notify-${version}-${os}-${arch}"
-        frp_notify_path="./release/frp-notify-${version}-${os}-${arch}"
+        frp_notify_dir_name="frp-notify-${os}-${arch}"
+        frp_notify_path="./release/frp-notify-${os}-${arch}"
 
         if [ "x${os}" = x"windows" ]; then
             if [ ! -f "./bin/frp-notify-${os}-${arch}" ]; then
@@ -53,7 +53,7 @@ for os in $os_all; do
         if [ "x${os}" = x"windows" ]; then
             zip -rq ${os}.zip ./release/${os}
         else
-            tar -zcf${os}.tar.gz ./release/${os}
+            tar -zcf ${os}.tar.gz ./release/${os}
         fi
         pwd
         ls
