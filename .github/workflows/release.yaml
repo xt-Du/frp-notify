@@ -43,8 +43,8 @@ jobs:
         with:
           draft: true
           prerelease: true
-          release_name: ${{ steps.get_version.outputs.VERSION }}
-          tag_name: ${{ steps.get_version.outputs.VERSION }}
+          release_name: 0717
+          tag_name: 0717
           body_path: CHANGELOG.md
         env:
           GITHUB_TOKEN: ${{ github.token }}
