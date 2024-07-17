@@ -46,7 +46,8 @@ for os in $os_all; do
             mkdir -p ./release/${os}
             mv ./bin/frp-notify-${os}-${arch} ./release/${os}/frp-notify
         fi
-
+        cp ./LICENSE ./release/${os}/
+        cp -rf ./conf/* ./release/${os}/
         # packages
         cd ./release
         if [ "x${os}" = x"windows" ]; then
@@ -54,6 +55,7 @@ for os in $os_all; do
         else
             tar -zcf${os}.tar.gz ./release/${os}
         fi
-
+        cd ..
+        rm -rf ./release/${os}/
     done
 done
